@@ -1,6 +1,6 @@
 ## Flutter Omise Payments
 
-![](demo.png);
+<img src="https://raw.githubusercontent.com/necessarylion/flutter_omise_payments/master/demo.png" alt="demo" width="200"/>
 
 #### Usage 
 
