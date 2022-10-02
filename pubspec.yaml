@@ -1,7 +1,7 @@
 name: flutter_omise_payments
 description: Omise js wrapper for flutter | Android | IOS | Web
-version: 1.0.1
-homepage:
+version: 1.0.2
+homepage: https://github.com/necessarylion/flutter_omise_payments
 
 environment:
   sdk: '>=2.18.1 <3.0.0'
