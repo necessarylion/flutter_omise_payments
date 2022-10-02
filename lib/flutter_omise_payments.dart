@@ -51,7 +51,6 @@ class OmisePayments extends StatelessWidget {
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Omise Payments</title>
-    <link href="https://cdn.omise.co/fonts/circular.css" rel="stylesheet" />
     <style>
     iframe {
       margin-top: -25px !important;
@@ -119,6 +118,7 @@ class OmisePayments extends StatelessWidget {
       children: [
         Expanded(
           child: WebView(
+            zoomEnabled: true,
             javascriptMode: JavascriptMode.unrestricted,
             debuggingEnabled: true,
             initialUrl: url.toString(),
