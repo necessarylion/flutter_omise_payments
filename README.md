@@ -1,5 +1,7 @@
 ## Flutter Omise Payments
 
+This package is Omise js wrapper for flutter. For Andorid, Web, iOS.
+
 <img src="https://raw.githubusercontent.com/necessarylion/flutter_omise_payments/master/demo.png" alt="demo" width="200"/>
 
 #### Usage 

@@ -1,4 +1,4 @@
-library flutter_omise_pay_js;
+library flutter_omise_payments;
 
 import 'dart:convert';
 
