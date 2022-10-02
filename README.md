@@ -28,3 +28,15 @@ OmisePayments(
   },
 )
 ```
+
+#### Get available payment methods for your account
+
+```
+List<String> paymentMethods = await OmisePayments.getAvailablePaymentMethods(publicKey);
+```
+
+#### Capability API
+
+```
+Capability capability = await OmisePayments.capability(publicKey);
+```

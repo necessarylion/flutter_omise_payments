@@ -3,6 +3,9 @@ library flutter_omise_pay_js;
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_omise_payments/capability/capability.dart';
+import 'package:flutter_omise_payments/capability/payment_method.dart';
+import 'package:http/http.dart' as http;
 import 'package:webview_flutter/webview_flutter.dart';
 
 class OmiseLocale {
@@ -131,5 +134,30 @@ class OmisePayments extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  static Future<Capability> capability(String publicKey) async {
+    String basicAuth = 'Basic ${base64.encode(utf8.encode('$publicKey:'))}';
+    http.Response r = await http.get(
+        Uri.parse('https://api.omise.co/capability'),
+        headers: <String, String>{
+          'authorization': basicAuth,
+          'Omise-Version': '2019-05-29'
+        });
+    return Capability.fromJson(jsonDecode(r.body));
+  }
+
+  static Future<List<String>> getAvailablePaymentMethods(
+      String publicKey) async {
+    Capability capability = await OmisePayments.capability(publicKey);
+    List<PaymentMethod> paymentMethods = capability.paymentMethods ?? [];
+
+    List<String> sources = [];
+    for (PaymentMethod paymentMethod in paymentMethods) {
+      sources.add(
+        paymentMethod.name == 'card' ? 'credit_card' : paymentMethod.name,
+      );
+    }
+    return sources;
   }
 }

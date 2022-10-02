@@ -1,3 +1,4 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+- Create a function to call Capability API 
+- Create a function to get available payment methods for your account
